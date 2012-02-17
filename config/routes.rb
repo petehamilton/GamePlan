@@ -6,6 +6,8 @@ GamePlan::Application.routes.draw do
   resources :user_specific_gameplans
 
   resources :gameplans
+  
+  resources :users
 
   resources :organisations
 
