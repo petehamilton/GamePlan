@@ -8,9 +8,8 @@
 
 bigorg = Organisation.create(name: 'A Nice Friendly Org.')
 
-gameplans = []
 ["Nursing", "Chef", "Beautician"].each do |job|
-  gameplans << Gameplan.create!(organisation_id: bigorg.id, name: job, description: "Some interesting information on being a #{job}")
+  bigorg.gameplans.create!(name: job, description: "Some interesting information on being a #{job}")
 end
 
 users = User.create([{first_name: 'Peter',
@@ -18,5 +17,5 @@ users = User.create([{first_name: 'Peter',
                      email: 'peterejhamilton@inspiredpixel.net'}])
 
 user_specific_gameplans = users.each do |u|
-  UserSpecificGameplan.create!(user: u, gameplan: gameplans[0])
+  UserSpecificGameplan.create!(user: u, gameplan: bigorg.gameplans[0])
 end
