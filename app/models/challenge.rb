@@ -1,4 +1,4 @@
 class Challenge < ActiveRecord::Base
-  belongs_to :user_specific_gameplan, :through => :usg_challenges
-  belongs_to :gameplan, :through => :gameplans_challenges
+  has_many :user_specific_gameplans, :through => :usg_challenges
+  has_many :gameplans, :through => :gameplans_challenges
 end
