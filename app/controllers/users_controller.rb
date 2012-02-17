@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  # User needs to be logged in
-  before_filter :authenticate
+  #Users need to prove who they are first!
+  before_filter :authorize
 
   # GET /users
   # GET /users.json

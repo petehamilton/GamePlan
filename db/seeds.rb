@@ -15,7 +15,14 @@ end
 users = User.create([{first_name: 'Peter',
                      last_name: 'Hamilton',
                      email: 'peterejhamilton@inspiredpixel.net',
-                     password: 'Password123'}])
+                     password: 'Password123',
+                     rank: '3'},
+                     
+                     {first_name: 'Pez',
+                     last_name: 'Cuckow',
+                     email: 'email@pezcuckow.com',
+                     password: 'password',
+                     rank: '3'}])
 
 user_specific_gameplans = users.each do |u|
   UserSpecificGameplan.create!(user_id: u.id, gameplan_id: bigorg.gameplans[0].id)

@@ -1,7 +1,4 @@
 class GameplansController < ApplicationController
-  # User needs to be logged in
-  before_filter :authenticate
-
   # GET /gameplans
   # GET /gameplans.json
   def index

@@ -11,6 +11,12 @@ GamePlan::Application.routes.draw do
 
   resources :organisations
 
+  resource  :session,
+    :controller => 'sessions',
+    :only => [:new, :create, :destroy]
+
+  match '/sign_out' => 'sessions#destroy', :via => :delete 
+
   root :to => 'Clearance::Sessions#new'
 
   # The priority is based upon order of creation:
