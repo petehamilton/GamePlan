@@ -87,6 +87,6 @@ class UsersController < ApplicationController
   def challenges
     user = current_user || User.first
     @required_challenges = user.challenges
-    @suggested_challenges = []
+    @suggested_challenges = user.suggested_challenges(10)
   end
 end

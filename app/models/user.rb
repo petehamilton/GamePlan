@@ -15,4 +15,9 @@ class User < ActiveRecord::Base
     user_gameplan_challenges = user_specific_gameplan.gameplan.challenges
     return user_specific_gameplan_challenges + user_gameplan_challenges
   end
+  
+  def suggested_challenges(num)
+    # Write some fancy algorithm here!
+    return []
+  end
 end
