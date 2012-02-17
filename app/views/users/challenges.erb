@@ -1,0 +1,13 @@
+<div id="challenges_container">
+    <h1>Hey <% current_user.first_name %>, got some challenges for you...</h1>
+    <ul id="required_challenges">
+        <% @required_challenges.each do |c| %>
+        <li><%= c.summary %></li>
+        <% end %>
+    </ul>
+    <ul id="suggested_challenges">
+        <% @required_challenges.each do |c| %>
+        <li><%= c.summary %></li>
+        <% end %>
+    </ul>
+</div>

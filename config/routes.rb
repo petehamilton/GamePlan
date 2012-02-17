@@ -19,7 +19,7 @@ GamePlan::Application.routes.draw do
 
   root :to => 'Clearance::Sessions#new'
   
-  match 'my_challenges' => 'users#challenges'
+  match 'my_challenges' => 'users#challenges', :as => user_challenges
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
