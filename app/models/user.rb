@@ -25,13 +25,14 @@ class User < ActiveRecord::Base
     # Write some fancy algorithm here!
     
     all_desired_skills = desired_skills
-    challenges.each do |c|
+    cs = challenges
+    cs.each do |c|
       c[:matching_skills] = desired_skills - (all_desired_skills - c.skills)
       puts "#{c.summary}: #{c[:matching_skills].inspect}"
     end
     
     # Sort challenges based on matching
-    
-    return challenges[0..num]
+    raise cs.to_yaml
+    return cs[0..num]
   end
 end
