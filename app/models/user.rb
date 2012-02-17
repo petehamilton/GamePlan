@@ -30,6 +30,6 @@ class User < ActiveRecord::Base
     
     # Sort challenges based on matching
     
-    return challenges[0..10]
+    return challenges[0..num]
   end
 end
