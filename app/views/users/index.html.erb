@@ -7,6 +7,7 @@
     <th>Email</th>
     <th>Dob</th>
     <th>Last Updated</th>
+    <th>Rank 1-3</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,6 +20,7 @@
     <td><%= user.email %></td>
     <td><%= user.dob %></td>
     <td><%= user.updated_at %></td>
+    <td><%= user.rank %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
