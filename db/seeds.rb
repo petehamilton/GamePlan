@@ -26,7 +26,7 @@ end
 
 users = User.create!([{first_name: 'Peter',
                      last_name: 'Hamilton',
-                     email: 'peterejhamilton@inspiredpixel.net',
+                     email: 'peter@inspiredpixel.net',
                      password: 'Password123',
                      rank: '3'},
                      {first_name: 'Pez',
