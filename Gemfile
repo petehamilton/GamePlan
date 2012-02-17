@@ -25,8 +25,6 @@ gem 'paperclip'
 gem 'formtastic'
 gem 'flutie'
 gem 'bourbon'
-gem 'copycopter_client'
-gem 'airbrake'
 
 group :development do
   gem "heroku"
