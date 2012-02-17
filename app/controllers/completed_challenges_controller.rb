@@ -1,4 +1,7 @@
 class CompletedChallengesController < ApplicationController
+  # User needs to be logged in
+  before_filter :authenticate
+
   # GET /completed_challenges
   # GET /completed_challenges.json
   def index
