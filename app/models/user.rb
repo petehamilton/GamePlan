@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   end
   
   def desired_skills
-    user_specific_gameplan.skills + user_specific_gameplan.game_plan.skills
+    user_specific_gameplan.skills + user_specific_gameplan.gameplan.skills
   end
   
   def suggested_challenges(num)
