@@ -17,5 +17,5 @@ users = User.create([{first_name: 'Peter',
                      email: 'peterejhamilton@inspiredpixel.net'}])
 
 user_specific_gameplans = users.each do |u|
-  UserSpecificGameplan.create!(user: u, gameplan: bigorg.gameplans[0])
+  UserSpecificGameplan.create!(user_id: u.id, gameplan_id: bigorg.gameplans[0].id)
 end

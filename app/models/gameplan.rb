@@ -4,7 +4,5 @@ class Gameplan < ActiveRecord::Base
   has_many :user_specific_gameplans
   has_and_belongs_to_many :challenges
   
-  attr_accessible :name
-  attr_accessible :description
-  attr_accessible :organisation_id
+  attr_accessible :name, :description, :organisation_id
 end
