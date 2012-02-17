@@ -3,4 +3,9 @@ class User < ActiveRecord::Base
   belongs_to :organisation
   
   attr_accessible :first_name, :last_name, :email, :password
+  
+  validates_presence_of :rank
+  
+  validates_numericality_of :rank, :less_than_or_equal_to => 3,
+                            :greater_than_or_equal_to => 1
 end
