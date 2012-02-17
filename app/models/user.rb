@@ -9,4 +9,10 @@ class User < ActiveRecord::Base
   
   validates_numericality_of :rank, :less_than_or_equal_to => 3,
                             :greater_than_or_equal_to => 1
+  
+  def challenges
+    user_specific_gameplan_challenges = user_specific_gameplan.challenges
+    user_gameplan_challenges = user_specific_gameplan.gameplan.challenges
+    return user_specific_gameplan_challenges + user_gameplan_challenges
+  end
 end

@@ -18,6 +18,8 @@ GamePlan::Application.routes.draw do
   match '/sign_out' => 'sessions#destroy', :via => :delete 
 
   root :to => 'Clearance::Sessions#new'
+  
+  match 'my_challenges' => 'users#challenges'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
