@@ -16,6 +16,8 @@ GamePlan::Application.routes.draw do
     :only => [:new, :create, :destroy]
 
   root :to => 'Clearance::Sessions#new'
+  
+  match 'my_challenges' => 'users#challenges', :as => user_challenges
 
   match '/sign_out' => 'sessions#destroy', :controller => 'sessions'
 

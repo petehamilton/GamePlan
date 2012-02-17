@@ -83,4 +83,9 @@ class UsersController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def challenges
+    user = current_user || User.first
+    @required_challenges = user.challenges
+  end
 end

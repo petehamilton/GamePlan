@@ -26,14 +26,15 @@ end
 
 users = User.create!([{first_name: 'Peter',
                      last_name: 'Hamilton',
-                     email: 'peterejhamilton@inspiredpixel.net',
+                     email: 'peter@inspiredpixel.net',
                      password: 'Password123',
+                     organisation_id: bigorg.id,
                      rank: '3'},
-                     
                      {first_name: 'Pez',
                      last_name: 'Cuckow',
                      email: 'email@pezcuckow.com',
                      password: 'password',
+                     organisation_id: bigorg.id,
                      rank: '3'}])
 
 users.each do |u|
