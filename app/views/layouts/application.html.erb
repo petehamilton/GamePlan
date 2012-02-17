@@ -15,15 +15,23 @@
     <%= render 'shared/flashes' -%>
   
     <div class="nav box">
-      <%= link_to "Home", root_path %>
-      <%= link_to "My Challenges", user_challenges_path %>
-      <%= link_to "User Challenges", challenges_path %>
-      <%= link_to "My Gameplans", user_specific_gameplans_path %>
-      <%= link_to "User Gameplans", gameplans_path %>
-      <%= link_to "Users", users_path %>
-      <%= link_to "Organisations", organisations_path %>
-      <%= link_to "New Password", new_password_path %>
-      <%= link_to "Sign Out", sign_out_path %>
+      <% if !current_user %>
+        <%= link_to "Home", root_path %>
+        <%= link_to "Sign In", sign_out_path %>
+      <% else %>
+        <% if current_user.rank == 1 %>
+        <%= link_to "My Challenges", user_challenges_path %>
+        <% #link_to "My Gameplans", user_specific_gameplans_path %>
+        <% elsif current_user.rank > 1 %>
+        <%= link_to "User Challenges", challenges_path %>
+        <%= link_to "User Gameplans", gameplans_path %>
+        <%= link_to "Users", users_path %>
+        <% elsif current_user.rank > 2 %>
+        <%= link_to "Organisations", organisations_path %>
+        <%= link_to "New Password", new_password_path %>
+        <% end %>
+        <%= link_to "Sign Out", sign_out_path %>
+      <% end %>
     </div>
   
     <div class="box content ">
