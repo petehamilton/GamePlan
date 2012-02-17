@@ -1,4 +1,6 @@
 GamePlan::Application.routes.draw do
+  resources :skills
+
   resources :completed_challenges
 
   resources :challenges
