@@ -1,4 +1,6 @@
 GamePlan::Application.routes.draw do
+  resources :organisations
+
   root :to => 'Clearance::Sessions#new'
 
   # The priority is based upon order of creation:
