@@ -7,10 +7,50 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= body_class %>">
-  <div id="header">
+  <div class="wrap">
+    <div id="header">
+    </div>
+  
+    <%= render 'shared/javascript' %>
+    <%= render 'shared/flashes' -%>
+  
+    <div class="nav box">
+      <%= link_to "Home", root_path %>
+      <%= link_to "My Challenges", user_challenges_path %>
+      <%= link_to "User Challenges", challenges_path %>
+      <%= link_to "My Gameplans", user_specific_gameplans_path %>
+      <%= link_to "User Gameplans", gameplans_path %>
+      <%= link_to "Users", users_path %>
+      <%= link_to "Organisations", organisations_path %>
+      <%= link_to "New Password", new_password_path %>
+      <%= link_to "Sign Out", sign_out_path %>
+    </div>
+  
+    <div class="box content ">
+      <%= yield %>
+      <div id="code">
+        <span>&#9786;</span>
+      </div>
+    </div>
+    <div class='copyright'>
+      Student Devs - Content copyright &copy; <%= Time.now.year %>
+    </div>
   </div>
-  <%= render 'shared/flashes' -%>
-  <%= yield %>
-  <%= render 'shared/javascript' %>
 </body>
 </html>
+
+
+
+
+ <% ''' <div class="wrap">
+    <div id="error" class="article">
+      <h1>Oh Dear!</h1>
+      <h2>File not found</h2>
+      <div class="line"></div>
+      <p>You\'ve gone looking for a file that doesn\'t exist, perhaps it has been moved or the address is incorrect?</p>
+      <p>Why don\'t you <a href="http://pezcuckow.com/ds;aldj;askd;y pdwqs">try the page again</a> or return to my <a href="http://www.pezcuckow.com">homepage</a>!</p>
+      
+      <div id="code">
+        <span>404</span>
+      </div>
+    </div>''' %>
