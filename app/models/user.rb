@@ -18,12 +18,18 @@ class User < ActiveRecord::Base
   end
   
   def desired_skills
-    
+    user_specific_gameplan.skills + user_specific_gameplan.game_plan.skills
   end
   
   def suggested_challenges(num)
     # Write some fancy algorithm here!
-    all_challenges = challenges
-    return []
+    all_desired_skills = desired_skills
+    challenges.each do |c|
+      c.matching_skills = desired_skills - (all_desired_skills - c.skills)
+    end
+    
+    # Sort challenges based on matching
+    
+    return challenges[0..10]
   end
 end
