@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Organisation:</b>
+  <%= @gameplan.organisation_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @gameplan.name %>
+</p>
+
+<p>
+  <b>Desription:</b>
+  <%= @gameplan.desription %>
+</p>
+
+
+<%= link_to 'Edit', edit_gameplan_path(@gameplan) %> |
+<%= link_to 'Back', gameplans_path %>

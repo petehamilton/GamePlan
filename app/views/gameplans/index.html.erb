@@ -1,0 +1,27 @@
+<h1>Listing gameplans</h1>
+
+<table>
+  <tr>
+    <th>Organisation</th>
+    <th>Name</th>
+    <th>Desription</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @gameplans.each do |gameplan| %>
+  <tr>
+    <td><%= gameplan.organisation_id %></td>
+    <td><%= gameplan.name %></td>
+    <td><%= gameplan.desription %></td>
+    <td><%= link_to 'Show', gameplan %></td>
+    <td><%= link_to 'Edit', edit_gameplan_path(gameplan) %></td>
+    <td><%= link_to 'Destroy', gameplan, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Gameplan', new_gameplan_path %>

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @completed_challenge.user_id %>
+</p>
+
+<p>
+  <b>Challenge:</b>
+  <%= @completed_challenge.challenge_id %>
+</p>
+
+<p>
+  <b>User specific gameplan:</b>
+  <%= @completed_challenge.user_specific_gameplan_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_completed_challenge_path(@completed_challenge) %> |
+<%= link_to 'Back', completed_challenges_path %>

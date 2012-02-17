@@ -1,0 +1,27 @@
+<h1>Listing completed_challenges</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Challenge</th>
+    <th>User specific gameplan</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @completed_challenges.each do |completed_challenge| %>
+  <tr>
+    <td><%= completed_challenge.user_id %></td>
+    <td><%= completed_challenge.challenge_id %></td>
+    <td><%= completed_challenge.user_specific_gameplan_id %></td>
+    <td><%= link_to 'Show', completed_challenge %></td>
+    <td><%= link_to 'Edit', edit_completed_challenge_path(completed_challenge) %></td>
+    <td><%= link_to 'Destroy', completed_challenge, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Completed challenge', new_completed_challenge_path %>

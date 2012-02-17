@@ -1,0 +1,29 @@
+<%= form_for(@completed_challenge) do |f| %>
+  <% if @completed_challenge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@completed_challenge.errors.count, "error") %> prohibited this completed_challenge from being saved:</h2>
+
+      <ul>
+      <% @completed_challenge.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :challenge_id %><br />
+    <%= f.number_field :challenge_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_specific_gameplan_id %><br />
+    <%= f.number_field :user_specific_gameplan_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

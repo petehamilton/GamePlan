@@ -1,0 +1,29 @@
+<%= form_for(@gameplan) do |f| %>
+  <% if @gameplan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gameplan.errors.count, "error") %> prohibited this gameplan from being saved:</h2>
+
+      <ul>
+      <% @gameplan.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :organisation_id %><br />
+    <%= f.number_field :organisation_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :desription %><br />
+    <%= f.text_area :desription %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

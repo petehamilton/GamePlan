@@ -1,0 +1,25 @@
+<h1>Listing user_specific_gameplans</h1>
+
+<table>
+  <tr>
+    <th>Gameplan</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user_specific_gameplans.each do |user_specific_gameplan| %>
+  <tr>
+    <td><%= user_specific_gameplan.gameplan_id %></td>
+    <td><%= user_specific_gameplan.user_id %></td>
+    <td><%= link_to 'Show', user_specific_gameplan %></td>
+    <td><%= link_to 'Edit', edit_user_specific_gameplan_path(user_specific_gameplan) %></td>
+    <td><%= link_to 'Destroy', user_specific_gameplan, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User specific gameplan', new_user_specific_gameplan_path %>

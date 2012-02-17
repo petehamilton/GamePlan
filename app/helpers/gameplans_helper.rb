@@ -1,0 +1,2 @@
+module GameplansHelper
+end
