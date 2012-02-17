@@ -23,9 +23,11 @@ class User < ActiveRecord::Base
   
   def suggested_challenges(num)
     # Write some fancy algorithm here!
+    
     all_desired_skills = desired_skills
     challenges.each do |c|
-      c.matching_skills = desired_skills - (all_desired_skills - c.skills)
+      c[:matching_skills] = desired_skills - (all_desired_skills - c.skills)
+      puts "#{c.summary}: #{c[:matching_skills].inspect}"
     end
     
     # Sort challenges based on matching

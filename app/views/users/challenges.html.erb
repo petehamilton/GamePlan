@@ -7,7 +7,7 @@
     </ul>
     <ul id="suggested_challenges">
         <% @suggested_challenges.each do |c| %>
-        <li><%= c.summary %></li>
+        <li><%= c.summary %>, (<%= c[:matching_skills].map{|s| s.name}.inspect %>)</li>
         <% end %>
     </ul>
 </div>
