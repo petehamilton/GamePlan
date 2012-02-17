@@ -1,4 +1,12 @@
 GamePlan::Application.routes.draw do
+  resources :completed_challenges
+
+  resources :challenges
+
+  resources :user_specific_gameplans
+
+  resources :gameplans
+
   resources :organisations
 
   root :to => 'Clearance::Sessions#new'
