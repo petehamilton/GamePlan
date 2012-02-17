@@ -6,10 +6,21 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-challenges = []
-(1..50).each do |i|
-  challenges << Challenge.create(summary: "Challenge #{i}", description: "Challenge #{i} Description", level: i % 10)
+skills = []
+(1..10).each do |i|
+  skills << Skill.create(name: "Skill #{i}")
 end
+
+challenges = []
+(1..20).each do |i|
+  c = Challenge.create(summary: "Challenge #{i}", description: "Challenge #{i} Description", level: i % 10)
+  (1..(rand(5) + 2)).each do
+    c.skills << skills[rand(skills.length)]
+  end
+  challenges << c 
+end
+
+
 
 
 bigorg = Organisation.create(name: 'A Nice Friendly Org.')
@@ -22,12 +33,16 @@ bigorg.gameplans.each do |g|
   (0..10).each do |i|
     g.challenges << challenges[rand(challenges.length)]
   end
+  
+  (1..(rand(2) + 2)).each do
+    g.skills << skills[rand(skills.length)]
+  end
 end
 
 users = User.create!([{first_name: 'Peter',
                      last_name: 'Hamilton',
                      email: 'peter@inspiredpixel.net',
-                     password: 'Password123',
+                     password: 'asd',
                      organisation_id: bigorg.id,
                      rank: '1'},
                      {first_name: 'Pez',

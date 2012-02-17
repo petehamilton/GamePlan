@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
     user_specific_gameplan.skills + user_specific_gameplan.gameplan.skills
   end
   
-  def suggested_challenges(num)
+  def suggested_challenges(num=0)
     # Write some fancy algorithm here!
     
     all_desired_skills = desired_skills
@@ -32,7 +32,11 @@ class User < ActiveRecord::Base
     end
     
     # Sort challenges based on matching
-    raise cs.to_yaml
-    return cs[0..num]
+    # raise cs.to_yaml
+    if num > 0
+      return cs[0..num]
+    else
+      return cs
+    end
   end
 end
