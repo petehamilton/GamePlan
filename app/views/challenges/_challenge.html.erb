@@ -4,6 +4,16 @@
     <span class="compulsory_label">(required)</span>
   <% end %>
   <a href="#" class="more_link">[info]</a>
+  
+  <!-- if the challenge is not compulsory -->
+    <!-- if already added -->
+    <% if !challenge.required(current_user) %>
+      <a href="#button" class="button icon approve">Add</a>
+      <a href="#button" class="button danger icon remove">Remove</a>
+    <% end %>
+  
+  <!--<span class="circle add">+</span>
+  <span class="circle remove">-</span>-->
 
   <div class="more_description">
     <div class="title"><%= challenge.summary %></div>
