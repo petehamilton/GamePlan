@@ -12,16 +12,8 @@ challenge_row
   <% if challenge.required(current_user) %>
     <span class="compulsory_label">(required)</span>
   <% end %>
-    <a href="#" class="circle info more_link" alt="Info">i</a>
-    <div class="more_description">
-    <div class="title"><%= challenge.summary %></div>
-    <div class="description"><%= challenge.description %></div>
-    <ul class="skill_tags">
-      <% challenge.skills.each do |s| %>
-      <li class="skill_tag"><%= s.name %></li>
-      <% end %>
-    </ul>
   </div>
+    <div class="controls">
   <!-- if the challenge is not compulsory -->
     <!-- if already added -->
     <% if !challenge.required(current_user) %>
@@ -38,10 +30,19 @@ challenge_row
     <% if action_name == "do_challenges" %>
       <%= link_to "View", challenge, :class => "button icon arrowright float_right" %> 
     <% end %>
-  
+    <a href="#" class="circle info more_link" alt="Info">i</a>
+    <div class="more_description">
+    <div class="title"><%= challenge.summary %></div>
+    <div class="description"><%= challenge.description %></div>
+    <ul class="skill_tags">
+      <% challenge.skills.each do |s| %>
+      <li class="skill_tag"><%= s.name %></li>
+      <% end %>
+    </ul>
+  </div>
+  </div>
   <!--<span class="circle add">+</span>
   <span class="circle remove">-</span>-->
-  </div>
 
   <div class="clear"></div>
 </li>
