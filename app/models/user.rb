@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
     
     # sort descending
     cs.sort! { |a,b| b[:matching_skills].length <=> a[:matching_skills].length }
-    
+    cs = cs.find_all{ |c| c[:matching_skills].length > 0 }
     if num > 0
       return cs[0..num]
     else
