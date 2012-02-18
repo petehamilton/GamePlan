@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
     
     all_desired_skills = desired_skills
     
-    cs = all_challenges
+    cs = Challenge.all - all_challenges
     cs.each do |c|
       c[:matching_skills] = all_desired_skills - (all_desired_skills - c.skills)
     end

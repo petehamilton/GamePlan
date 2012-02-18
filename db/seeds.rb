@@ -31,7 +31,8 @@ end
 
 bigorg.gameplans.each do |g|
   (0..10).each do |i|
-    g.challenges << challenges[rand(challenges.length)]
+    c = challenges[rand(challenges.length)]
+    g.challenges << challenges[rand(challenges.length)] if !g.challenges.include?(c)
   end
   
   (1..(rand(3) + 3)).each do
