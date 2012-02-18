@@ -25,6 +25,7 @@ gem 'paperclip'
 gem 'formtastic'
 gem 'flutie'
 gem 'bourbon'
+gem 'mediaburst'
 
 group :development do
   gem "heroku"
