@@ -30,6 +30,10 @@ GamePlan::Application.routes.draw do
   
   match '/take_challenge' => 'challenges#take_challenge', :as => :take_challenge
   
+  match '/remove_challenge' => 'challenges#remove_challenge', :as => :remove_challenge
+  
+  
+  
   
   
 
