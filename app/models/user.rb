@@ -52,8 +52,8 @@ class User < ActiveRecord::Base
     texter = Mediaburst::API.new('samlieshout@hotmail.com', 'QsSA2qfq!$')
     if texter.get_credit.to_i > 0
       response = texter.send_message(phone_number, 'Hi ' + first_name + ',
-      there is feedback waiting for you from your mentor! Please visit
-      http://www.gameplan.com to get it!', {:from => 'GamePlan'})
+there is feedback waiting for you from your mentor!
+Please visit http://www.gameplan.com to get it!', {:from => 'GamePlan'})
       return response # returns true on success, error code on fail
     else
       return false # not enough credit :(
