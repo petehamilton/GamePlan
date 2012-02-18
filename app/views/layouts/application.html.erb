@@ -11,28 +11,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= body_class %>">
-<<<<<<< HEAD
-  <div class="global-wrap">
-    <div id="header" class="box">
-      <h1>This is where the logo is</h1>
-    </div>
-    <div class="wrap">
-  
-    
-      <%= render 'shared/javascript' %>
-      <%= render 'shared/flashes' -%>
-    
-      <div id="nab" class="box round">
-        <%= link_to "Home", root_path %>
-        <%= link_to "My Challenges", user_challenges_path %>
-        <%= link_to "User Challenges", challenges_path %>
-        <%= link_to "My Gameplans", user_specific_gameplans_path %>
-        <%= link_to "User Gameplans", gameplans_path %>
-        <%= link_to "Users", users_path %>
-        <%= link_to "Organisations", organisations_path %>
-        <%= link_to "New Password", new_password_path %>
-        <%= link_to "Sign Out", sign_out_path %>
-=======
 
   <header id="header">
     <div class="content_container">
@@ -48,19 +26,8 @@
       <div class="content">
         <%= render 'shared/navigation' -%>
         <div class="clear"></div>
->>>>>>> 501011ed693f924ab4379b87c17b75cb16b2354f
-      </div>
-    
-      <div class="box content round">
-        <%= yield %>
-        <div id="code">
-          <span>&#9786;</span>
-        </div>
       </div>
     </div><!-- wrap -->
-    <div id="footer" class='box'>
-      Made by 'us' and we're awesome!
-    </div>
   </nav>
 
   <div id="main">
@@ -72,8 +39,6 @@
       </div>
     </div>
   </div>
-<<<<<<< HEAD
-=======
 
   <footer id="footer">
     <div class="content_container">
@@ -84,6 +49,5 @@
     </div>
   </footer>
   
->>>>>>> 501011ed693f924ab4379b87c17b75cb16b2354f
 </body>
 </html>
