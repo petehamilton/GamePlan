@@ -15,7 +15,16 @@ class Challenge < ActiveRecord::Base
   end
   
   def complete(user, user_specific_gameplan)
-    completions = challenge_completions.select{|c| c.user_specific_gameplan_id == user.user_specific_gameplan.id}
+    completions = challenge_completions.select{|c| c.user_specific_gameplan_id == user.user_specific_gameplan.id && c.status==1}
     return completions.length > 0
+  end
+  
+  def pending(user, user_specific_gameplan)
+    completions = challenge_completions.select{|c| c.user_specific_gameplan_id == user.user_specific_gameplan.id && c.status==0}
+    return completions.length > 0
+  end
+  
+  def incomplete(user, user_specific_gameplan)
+    !complete(user, user_specific_gameplan) && !pending(user, user_specific_gameplan)
   end
 end
