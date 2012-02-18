@@ -1,0 +1,2 @@
+module ChallengeCompletionsHelper
+end

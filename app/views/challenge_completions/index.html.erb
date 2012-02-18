@@ -1,0 +1,29 @@
+<h1>Listing challenge_completions</h1>
+
+<table>
+  <tr>
+    <th>Challenge</th>
+    <th>User</th>
+    <th>User specific gameplan</th>
+    <th>Writeup</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @challenge_completions.each do |challenge_completion| %>
+  <tr>
+    <td><%= challenge_completion.challenge %></td>
+    <td><%= challenge_completion.user %></td>
+    <td><%= challenge_completion.user_specific_gameplan %></td>
+    <td><%= challenge_completion.writeup %></td>
+    <td><%= link_to 'Show', challenge_completion %></td>
+    <td><%= link_to 'Edit', edit_challenge_completion_path(challenge_completion) %></td>
+    <td><%= link_to 'Destroy', challenge_completion, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Challenge completion', new_challenge_completion_path %>
