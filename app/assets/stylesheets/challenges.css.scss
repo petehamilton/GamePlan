@@ -100,12 +100,17 @@
   	color-stop(1, rgb(253,1,1)),
   	color-stop(0, rgb(190,0,0))
   );
+
+#continue_button_container{
+  text-align:center;
+  font-size: 16px;
+  margin-top: 15px;
 }
 
 #facebox{
   .title{
     font-weight: bold;
-    font-size: 15px;
+    font-size: 13px;
     padding-bottom: 5px;
     margin-bottom: 10px;
     border-bottom: 1px solid #CCC;

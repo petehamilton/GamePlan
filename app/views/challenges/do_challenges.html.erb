@@ -1,0 +1,7 @@
+<div id="all_challenges_container">
+  <div id="user_challenges_container" class="challenges_container">
+    <ul id="my_challenges">
+      <%= render :partial => "challenge", :collection => @challenges, :as => :challenge %>
+    </ul>
+  </div>
+</div>

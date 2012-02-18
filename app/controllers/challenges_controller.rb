@@ -90,4 +90,9 @@ class ChallengesController < ApplicationController
     @chosen_challenges = user.chosen_challenges
     @suggested_challenges = user.suggested_challenges(5)
   end
+  
+  def do_challenges
+    user = current_user || User.first
+    @challenges = user.all_challenges
+  end
 end

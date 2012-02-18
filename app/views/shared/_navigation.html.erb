@@ -5,8 +5,8 @@
   </div>
 <% else %>
   <% if current_user.rank == 1 %>
-    <%= link_to "My Challenges", choose_challenges_path %>
-    <%= link_to "New Password", new_password_path %>
+    <%= link_to "Choose My Challenges", choose_challenges_path %>
+    <%= link_to "Do My Challenges", do_challenges_path %>
   <% elsif current_user.rank > 1 %>
     <%= link_to "User Challenges", challenges_path %>
     <%= link_to "User Gameplans", gameplans_path %>
@@ -15,6 +15,7 @@
     <%= link_to "Organisations", organisations_path %>
   <% end %>
   <div class="right_nav">
+    <%= link_to "Change Password", new_password_path %>
     <%= link_to "Sign Out", sign_out_path %>
   </div>
 <% end %>

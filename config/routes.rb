@@ -20,6 +20,7 @@ GamePlan::Application.routes.draw do
   root :to => 'Clearance::Sessions#new'
   
   match 'choose_challenges' => 'challenges#choose_challenges', :as => :choose_challenges
+  match 'do_challenges' => 'challenges#do_challenges', :as => :do_challenges
 
   match '/sign_out' => 'sessions#destroy', :controller => 'sessions'
   match '/sign_in' => 'sessions#new', :controller => 'sessions'
