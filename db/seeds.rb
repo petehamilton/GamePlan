@@ -25,7 +25,7 @@ end
 
 bigorg = Organisation.create(name: 'A Nice Friendly Org.')
 
-["Nursing", "Chef", "Beautician"].each do |job|
+["Nurse", "Chef", "Beautician"].each do |job|
   bigorg.gameplans.create!(name: job, description: "Some interesting information on being a #{job}")
 end
 
