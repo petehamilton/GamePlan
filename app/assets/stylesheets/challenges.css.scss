@@ -14,6 +14,7 @@
 }
 .controls{
   float:right;
+  width: 110px;
 }
 
 #complete_challenge_container{
@@ -49,6 +50,11 @@ h2{
 
 #all_user_challenges_container{
   width: auto;
+  
+  .summary, .controls{
+    width: auto;
+    float:none;
+  }
 
   .challenge_row{
     background-color: #fdd7d7;

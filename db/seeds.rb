@@ -104,7 +104,7 @@ users = User.create!([{first_name: 'Peter',
                      rank: '3'}])
 
 users.each do |u|
-  ugp = UserSpecificGameplan.create!(user_id: u.id, gameplan_id: bigorg.gameplans[rand(bigorg.gameplans.length)].id)
+  ugp = UserSpecificGameplan.create!(user_id: u.id, gameplan_id: bigorg.gameplans[0].id)
 end
 
 # users.each do |u|
