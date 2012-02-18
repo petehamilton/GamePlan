@@ -69,6 +69,20 @@ p {
 	padding-bottom:0.5em;
 }
 
+#header {
+  margin: auto;
+  min-width: 880px;
+  width: auto;
+}
+
+div.round {
+  	@include border-radius(10px);
+}
+
+div.global-wrap {
+  min-width: 880px;
+  margin: 0 auto;
+}
 
 div.wrap {
   width: 880px;
@@ -78,7 +92,6 @@ div.wrap {
 
 div.box {
 	/* Applying CSS3 rounded corners: */
-	@include border-radius(10px);
 	background-color:#f5f5f5;
 	margin:5px auto;
 	padding:5px 20px;
@@ -100,17 +113,17 @@ div.nav {
   
 }
 
-div.nav a {
+div#nav a {
   float: left;
   padding: 5px;
   border-right: 1px solid black;
 }
 
-div.nav a:hover {
+div#nav a:hover {
   text-shadow:-1px -1px 0px #999999;
 }
 
-div.nav a:last-child {
+div#nav a:last-child {
   border-right: none;
 }
 
@@ -139,6 +152,11 @@ div.content #code {
   line-height: 90px;
   opacity: 0.1;
   float: right;
+}
+
+div.footer {
+  min-width: 880px;
+  margin: 0 auto;
 }
 
 div.copyright { 

@@ -7,30 +7,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= body_class %>">
-  <div class="wrap">
-    <div id="header">
+  <div class="global-wrap">
+    <div id="header" class="box">
+      <h1>This is where the logo is</h1>
     </div>
+    <div class="wrap">
   
-    <%= render 'shared/javascript' %>
-    <%= render 'shared/flashes' -%>
-  
-    <div class="nav box">
-      <%= link_to "Home", root_path %>
-      <%= link_to "My Challenges", user_challenges_path %>
-      <%= link_to "User Challenges", challenges_path %>
-      <%= link_to "My Gameplans", user_specific_gameplans_path %>
-      <%= link_to "User Gameplans", gameplans_path %>
-      <%= link_to "Users", users_path %>
-      <%= link_to "Organisations", organisations_path %>
-      <%= link_to "New Password", new_password_path %>
-      <%= link_to "Sign Out", sign_out_path %>
-    </div>
-  
-    <div class="box content ">
-      <%= yield %>
-      <div id="code">
-        <span>&#9786;</span>
+    
+      <%= render 'shared/javascript' %>
+      <%= render 'shared/flashes' -%>
+    
+      <div id="nab" class="box round">
+        <%= link_to "Home", root_path %>
+        <%= link_to "My Challenges", user_challenges_path %>
+        <%= link_to "User Challenges", challenges_path %>
+        <%= link_to "My Gameplans", user_specific_gameplans_path %>
+        <%= link_to "User Gameplans", gameplans_path %>
+        <%= link_to "Users", users_path %>
+        <%= link_to "Organisations", organisations_path %>
+        <%= link_to "New Password", new_password_path %>
+        <%= link_to "Sign Out", sign_out_path %>
       </div>
+    
+      <div class="box content round">
+        <%= yield %>
+        <div id="code">
+          <span>&#9786;</span>
+        </div>
+      </div>
+    </div><!-- wrap -->
+    <div id="footer" class='box'>
+      Made by 'us' and we're awesome!
     </div>
     <div class='copyright'>
       Student Devs - Content copyright &copy; <%= Time.now.year %>
@@ -38,19 +45,3 @@
   </div>
 </body>
 </html>
-
-
-
-
- <% ''' <div class="wrap">
-    <div id="error" class="article">
-      <h1>Oh Dear!</h1>
-      <h2>File not found</h2>
-      <div class="line"></div>
-      <p>You\'ve gone looking for a file that doesn\'t exist, perhaps it has been moved or the address is incorrect?</p>
-      <p>Why don\'t you <a href="http://pezcuckow.com/ds;aldj;askd;y pdwqs">try the page again</a> or return to my <a href="http://www.pezcuckow.com">homepage</a>!</p>
-      
-      <div id="code">
-        <span>404</span>
-      </div>
-    </div>''' %>
