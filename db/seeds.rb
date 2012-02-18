@@ -73,8 +73,7 @@ end
 
 
 bigorg = Organisation.create(name: 'A Nice Friendly Org.')
-
-bigorg.gameplans.create!(name: "Nurse", description: "A nurse is a really rewarding job. You’ll spend your day at the front line of a patient care plan. You’ll be the person a patient relies on to pass information between them and their doctor to ensure they are receiving the best care possible. You’ll be managing their medication, checking its right and being taken appropriately. You will be making sure they are comfortable content and as happy as can be! When you’ve finished the GamePlan and are doing this on a day to day basis you be able to go home with a smile on your face knowing that the hard work you’ve done has really made a different to someones life!!")
+bigorg.gameplans.create!(name: "Nurse", description: "A nurse is a really rewarding job. You'll spend your day at the front line of a patient care plan. You'll be the person a patient relies on to pass information between them and their doctor to ensure they are receiving the best care possible. You'll be managing their medication, checking its right and being taken appropriately. You will be making sure they are comfortable content and as happy as can be! When you've finished the GamePlan and are doing this on a day to day basis you be able to go home with a smile on your face knowing that the hard work you've done has really made a different to someones life!!")
 
 bigorg.gameplans.each do |g|
   (0..3).each do |i|
