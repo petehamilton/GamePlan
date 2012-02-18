@@ -1,6 +1,8 @@
 <% if !current_user %>
   <%= link_to "Home", root_path %>
-  <%= link_to "Sign In", sign_out_path %>
+  <div class="right_nav">
+    <%= link_to "Sign In", sign_out_path %>
+  </div>
 <% else %>
   <% if current_user.rank == 1 %>
     <%= link_to "My Challenges", choose_challenges_path %>
