@@ -1,4 +1,12 @@
-<li class="challenge_row <%= 'compulsory' if challenge.required(current_user) %>" alt="<%= challenge.id %>">
+
+<li
+alt="<%= challenge.id %>"
+class="
+challenge_row 
+<%= "compulsory " if challenge.required(current_user) %>
+<%= "complete " if challenge.complete(current_user, current_user.user_specific_gameplan) %>
+<%= "pending " if challenge.pending(current_user, current_user.user_specific_gameplan) %>
+">
   <%= challenge.summary %>
   <% if challenge.required(current_user) %>
     <span class="compulsory_label">(required)</span>
@@ -18,7 +26,7 @@
     
     <% if action_name == "do_challenges" %>
       <%= link_to "View", challenge, :class => "button icon arrowright float_right"%>
-    <% end %>  
+    <% end %>
   
   <!--<span class="circle add">+</span>
   <span class="circle remove">-</span>-->

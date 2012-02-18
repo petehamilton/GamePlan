@@ -112,10 +112,9 @@ class ChallengesController < ApplicationController
   end
   
   def submit_challenge
-    writeup = params[:writeup]
-    
-    challenge_completion = ChallengeCompletion.create(:writeup => writeup, :challenge_id => params[:challenge_id], :user_id => current_user.id, :user_specific_gameplan_id => current_user.user_specific_gameplan.id)
-    redirect_to do_challenges_path
+    challenge = Challenge.find(params[:challenge_id])
+    challenge_completion = ChallengeCompletion.create({:writeup => params[:writeup], :challenge_id => challenge.id, :user_id => current_user.id, :user_specific_gameplan_id => current_user.user_specific_gameplan.id})
+    redirect_to challenge
   end
 
   def remove_challenge

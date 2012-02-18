@@ -12,8 +12,14 @@
 #complete_challenge_container{
   padding: 20px;
   background-color: #effdd7;
-  border: 2px solid #DFF2BF;
   margin-top:30px;
+
+  &.pending{
+    background-color: #fdeed7;
+  }
+  &.complete{
+    background-color: #effdd7;
+  }
 }
 
 h1,h2{
@@ -36,6 +42,17 @@ h2{
 
 #all_user_challenges_container{
   width: auto;
+
+  .challenge_row{
+    background-color: #fdd7d7;
+
+    &.pending{
+      background-color: #fdeed7;
+    }
+    &.complete{
+      background-color: #effdd7;
+    }
+  }
 }
 
 #user_challenges_container{
@@ -58,7 +75,7 @@ h2{
   &.compulsory{
     background-color: #f9f9f9;
   }
-  
+
   .compulsory_label{
     color: #999;
     font-size: 10px;
@@ -93,13 +110,13 @@ a.circle {
   background-image: -moz-linear-gradient(bottom, rgb(97,176,52) 0%, rgb(144,218,26) 100%);
   background-image: -webkit-linear-gradient(bottom, rgb(97,176,52) 0%, rgb(144,218,26) 100%);
   background-image: -ms-linear-gradient(bottom, rgb(97,176,52) 0%, rgb(144,218,26) 100%);
-  
+
   background-image: -webkit-gradient(
-  	linear,
-  	left bottom,
-  	left top,
-  	color-stop(0.06, rgb(97,176,52)),
-  	color-stop(0.53, rgb(144,218,26))
+  linear,
+  left bottom,
+  left top,
+  color-stop(0.06, rgb(97,176,52)),
+  color-stop(0.53, rgb(144,218,26))
   );
 }
 
@@ -109,13 +126,13 @@ a.circle {
   background-image: -moz-linear-gradient(bottom, rgb(253,1,1) 100%, rgb(190,0,0) 0%);
   background-image: -webkit-linear-gradient(bottom, rgb(253,1,1) 100%, rgb(190,0,0) 0%);
   background-image: -ms-linear-gradient(bottom, rgb(253,1,1) 100%, rgb(190,0,0) 0%);
-  
+
   background-image: -webkit-gradient(
-  	linear,
-  	left bottom,
-  	left top,
-  	color-stop(1, rgb(253,1,1)),
-  	color-stop(0, rgb(190,0,0))
+  linear,
+  left bottom,
+  left top,
+  color-stop(1, rgb(253,1,1)),
+  color-stop(0, rgb(190,0,0))
   );
 }
 
@@ -125,13 +142,13 @@ a.circle {
   background-image: -moz-linear-gradient(bottom, rgb(1,150,227) 100%, rgb(0,132,200) 0%);
   background-image: -webkit-linear-gradient(bottom, rgb(1,150,227) 100%, rgb(0,132,200) 0%);
   background-image: -ms-linear-gradient(bottom, rgb(1,150,227) 100%, rgb(0,132,200) 0%);
-  
+
   background-image: -webkit-gradient(
-  	linear,
-  	left bottom,
-  	left top,
-  	color-stop(1, rgb(1,150,227)),
-  	color-stop(0, rgb(0,132,200))
+  linear,
+  left bottom,
+  left top,
+  color-stop(1, rgb(1,150,227)),
+  color-stop(0, rgb(0,132,200))
   );
 }
 
