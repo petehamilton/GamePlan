@@ -10,25 +10,31 @@ class User < ActiveRecord::Base
   validates_numericality_of :rank, :less_than_or_equal_to => 3,
                             :greater_than_or_equal_to => 1
                           
+    
+  def required_challenges
+    user_specific_gameplan.gameplan.challenges
+  end
   
-  def challenges
-    user_specific_gameplan_challenges = user_specific_gameplan.challenges
-    user_gameplan_challenges = user_specific_gameplan.gameplan.challenges
-    return user_specific_gameplan_challenges + user_gameplan_challenges
+  def chosen_challenges
+    user_specific_gameplan.challenges
+  end
+  
+  def all_challenges
+    required_challenges + chosen_challenges
   end
   
   def desired_skills
-    user_specific_gameplan.skills + user_specific_gameplan.gameplan.skills
+    user_specific_gameplan.gameplan.skills
   end
   
   def suggested_challenges(num=0)
     # Write some fancy algorithm here!
     
     all_desired_skills = desired_skills
-    cs = challenges
+    
+    cs = all_challenges
     cs.each do |c|
-      c[:matching_skills] = desired_skills - (all_desired_skills - c.skills)
-      puts "#{c.summary}: #{c[:matching_skills].inspect}"
+      c[:matching_skills] = all_desired_skills - (all_desired_skills - c.skills)
     end
     
     # Sort challenges based on matching

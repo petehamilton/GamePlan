@@ -14,7 +14,7 @@ end
 challenges = []
 (1..20).each do |i|
   c = Challenge.create(summary: "Challenge #{i}", description: "Challenge #{i} Description", level: i % 10)
-  (1..(rand(5) + 2)).each do
+  (1..rand(5)).each do
     c.skills << skills[rand(skills.length)]
   end
   challenges << c 
@@ -34,7 +34,7 @@ bigorg.gameplans.each do |g|
     g.challenges << challenges[rand(challenges.length)]
   end
   
-  (1..(rand(2) + 2)).each do
+  (1..(rand(3) + 3)).each do
     g.skills << skills[rand(skills.length)]
   end
 end
@@ -53,7 +53,7 @@ users = User.create!([{first_name: 'Peter',
                      rank: '3'}])
 
 users.each do |u|
-  UserSpecificGameplan.create!(user_id: u.id, gameplan_id: bigorg.gameplans[rand(bigorg.gameplans.length)].id)
+  ugp = UserSpecificGameplan.create!(user_id: u.id, gameplan_id: bigorg.gameplans[rand(bigorg.gameplans.length)].id)
 end
 
 users.each do |u|

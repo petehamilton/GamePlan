@@ -8,10 +8,6 @@ class AddSkillJoins < ActiveRecord::Migration
       t.column :gameplan_id, :integer
       t.column :skill_id, :integer
     end
-    create_table :skills_user_specific_gameplans, :id => false do |t|
-      t.column :user_specific_gameplan_id, :integer
-      t.column :skill_id, :integer
-    end
   end
 
   def down
