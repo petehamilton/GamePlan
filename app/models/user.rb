@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   include Clearance::User
   belongs_to :organisation
   has_one :user_specific_gameplan
+  has_one :gameplan, :through => :user_specific_gameplan
   
   attr_accessible :first_name, :last_name, :email, :password, :rank
   
@@ -12,7 +13,7 @@ class User < ActiveRecord::Base
                           
     
   def required_challenges
-    user_specific_gameplan.gameplan.challenges
+    gameplan.challenges
   end
   
   def chosen_challenges
@@ -24,7 +25,7 @@ class User < ActiveRecord::Base
   end
   
   def desired_skills
-    user_specific_gameplan.gameplan.skills
+    gameplan.skills
   end
   
   def suggested_challenges(num=0)
