@@ -2,26 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#user_challenges_container{
-  ul{
-    list-style: none;
-  }
+#gameplan_intro{
+  padding: 20px;
+  background-color: #effdd7;
+  border: 2px solid #DFF2BF;
+  margin-bottom: 30px;
 }
 
 .challenges_container{
   width: 380px;
-  
+
   h1{
-    font-size: 20px;
     border-bottom: 2px solid #ccc;
     padding-bottom: 5px;
     margin-bottom: 10px;
+  }
+
+  ul{
+    list-style: none;
   }
 }
 
 #user_challenges_container{
   float:left;
   margin-right: 60px;
+
+  #required_challenges{
+    margin-bottom: 0px;
+  }
 }
 
 #suggested_challenges_container{
@@ -31,8 +39,21 @@
 .challenge_row{
   padding: 10px;
   border-bottom: 1px solid #eee;
-  
+
   &.compulsory{
-    
+
+  }
+  .more_description{
+    display: none;
+  }
+}
+
+#facebox{
+  .title{
+    font-weight: bold;
+    font-size: 15px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #CCC;
   }
 }

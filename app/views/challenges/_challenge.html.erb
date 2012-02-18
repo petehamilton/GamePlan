@@ -1,3 +1,10 @@
 <li class="challenge_row <%= 'compulsory' if challenge.required(current_user) %>">
   <%= challenge.summary %>
+  
+  <a href="#" class="more_link">[info]</a>
+  
+  <div class="more_description">
+    <div class="title"><%= challenge.summary %></div>
+    <%= challenge.description %>
+  </div>
 </li>

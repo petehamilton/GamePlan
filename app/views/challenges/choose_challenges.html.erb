@@ -1,24 +1,21 @@
-<h1>Hey <%= current_user.first_name %>, got some challenges for you...</h1>
+<div id="gameplan_intro">
+  <h1>So, you want to be a <%= current_user.gameplan.name %>?</h1>
+</div>
+
 <div id="all_challenges_container">
   <div id="user_challenges_container" class="challenges_container">
     <h1>Your Current Tasks</h1>
     <ul id="required_challenges">
-      <% @required_challenges.each do |c| %>
       <%= render :partial => "challenge", :collection => @required_challenges, :as => :challenge %>
-      <% end %>
     </ul>
     <ul id="chosen_challenges">
-      <% @chosen_challenges.each do |c| %>
       <%= render :partial => "challenge", :collection => @chosen_challenges, :as => :challenge %>
-      <% end %>
     </ul>
   </div>
   <div id="suggested_challenges_container" class="challenges_container">
     <h1>More Suggested Tasks</h1>
     <ul id="suggested_challenges">
-      <% @suggested_challenges.each do |c| %>
       <%= render :partial => "challenge", :collection => @suggested_challenges, :as => :challenge %>
-      <% end %>
     </ul>
   </div>
 </div>
