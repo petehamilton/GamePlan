@@ -8,10 +8,12 @@
   border: 2px solid #DFF2BF;
   margin-bottom: 30px;
 }
-
+.summary{
+  float:left;
+  width: 220px;
+}
 .controls{
   float:right;
-  width: 100px;
 }
 
 #complete_challenge_container{
@@ -76,6 +78,7 @@ h2{
 .challenge_row{
   padding: 10px;
   border-bottom: 1px solid #eee;
+  display: block;
 
   &.compulsory{
     background-color: #f9f9f9;
