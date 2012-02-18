@@ -1,0 +1,17 @@
+<li class="challenge_row <%= 'compulsory' if challenge.required(current_user) %>">
+  <%= challenge.summary %>
+  <% if challenge.required(current_user) %>
+    <span class="compulsory_label">(required)</span>
+  <% end %>
+  <a href="#" class="more_link">[info]</a>
+
+  <div class="more_description">
+    <div class="title"><%= challenge.summary %></div>
+    <div class="description"><%= challenge.description %></div>
+    <ul class="skill_tags">
+      <% challenge.skills.each do |s| %>
+      <li class="skill_tag"><%= s.name %></li>
+      <% end %>
+    </ul>
+  </div>
+</li>

@@ -1,4 +1,6 @@
 GamePlan::Application.routes.draw do
+  resources :skills
+
   resources :completed_challenges
 
   resources :challenges
@@ -17,9 +19,10 @@ GamePlan::Application.routes.draw do
 
   root :to => 'Clearance::Sessions#new'
   
-  match 'my_challenges' => 'users#challenges', :as => :user_challenges
+  match 'choose_challenges' => 'challenges#choose_challenges', :as => :choose_challenges
 
   match '/sign_out' => 'sessions#destroy', :controller => 'sessions'
+  match '/sign_in' => 'sessions#new', :controller => 'sessions'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

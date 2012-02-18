@@ -83,10 +83,4 @@ class UsersController < ApplicationController
       format.json { head :ok }
     end
   end
-
-  def challenges
-    user = current_user || User.first
-    @required_challenges = user.challenges
-    @suggested_challenges = user.suggested_challenges(10)
-  end
 end

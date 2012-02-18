@@ -1,0 +1,23 @@
+<div id="gameplan_intro">
+  <h1>So, you want to be a <%= current_user.gameplan.name %>?</h1>
+  <%= current_user.gameplan.description %>
+  <%= "Here is lots of useful info on how to be a #{current_user.gameplan.name}. "*10%>
+</div>
+
+<div id="all_challenges_container">
+  <div id="user_challenges_container" class="challenges_container">
+    <h1>Your Current Tasks</h1>
+    <ul id="required_challenges">
+      <%= render :partial => "challenge", :collection => @required_challenges, :as => :challenge %>
+    </ul>
+    <ul id="chosen_challenges">
+      <%= render :partial => "challenge", :collection => @chosen_challenges, :as => :challenge %>
+    </ul>
+  </div>
+  <div id="suggested_challenges_container" class="challenges_container">
+    <h1>More Suggested Tasks</h1>
+    <ul id="suggested_challenges">
+      <%= render :partial => "challenge", :collection => @suggested_challenges, :as => :challenge %>
+    </ul>
+  </div>
+</div>

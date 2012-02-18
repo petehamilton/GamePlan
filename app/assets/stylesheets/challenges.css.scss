@@ -1,3 +1,70 @@
 // Place all the styles related to the Challenges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#gameplan_intro{
+  padding: 20px;
+  background-color: #effdd7;
+  border: 2px solid #DFF2BF;
+  margin-bottom: 30px;
+}
+
+.challenges_container{
+  width: 380px;
+
+  h1{
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+
+  ul{
+    list-style: none;
+  }
+}
+
+#user_challenges_container{
+  float:left;
+  margin-right: 60px;
+
+  #required_challenges{
+    margin-bottom: 0px;
+  }
+}
+
+#suggested_challenges_container{
+  float:left;
+}
+
+.challenge_row{
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+
+  &.compulsory{
+    background-color: #f9f9f9;
+  }
+  
+  .compulsory_label{
+    color: #999;
+    font-size: 10px;
+  }
+  .more_link{
+    float:right;
+  }
+  .more_description{
+    display: none;
+  }
+}
+
+#facebox{
+  .title{
+    font-weight: bold;
+    font-size: 15px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #CCC;
+  }
+  .description{
+    margin-bottom:10px;
+  }
+}

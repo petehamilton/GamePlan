@@ -4,9 +4,14 @@
   <meta charset="utf-8" />
   <title><%= page_title %></title>
   <%= stylesheet_link_tag :application, :media => 'all' %>
+  <link href='http://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css'>
+  
+  <%= render 'shared/javascript' %>
+  
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= body_class %>">
+<<<<<<< HEAD
   <div class="global-wrap">
     <div id="header" class="box">
       <h1>This is where the logo is</h1>
@@ -27,6 +32,23 @@
         <%= link_to "Organisations", organisations_path %>
         <%= link_to "New Password", new_password_path %>
         <%= link_to "Sign Out", sign_out_path %>
+=======
+
+  <header id="header">
+    <div class="content_container">
+      <div class="content">
+        <%= render "shared/header" %>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </header>
+
+  <nav id="navigation">
+    <div class="content_container">
+      <div class="content">
+        <%= render 'shared/navigation' -%>
+        <div class="clear"></div>
+>>>>>>> 501011ed693f924ab4379b87c17b75cb16b2354f
       </div>
     
       <div class="box content round">
@@ -39,9 +61,29 @@
     <div id="footer" class='box'>
       Made by 'us' and we're awesome!
     </div>
-    <div class='copyright'>
-      Student Devs - Content copyright &copy; <%= Time.now.year %>
+  </nav>
+
+  <div id="main">
+    <div class="content_container">
+      <div class="content">
+        <%= render 'shared/flashes' -%>
+        <%= yield %>
+        <div class="clear"></div>
+      </div>
     </div>
   </div>
+<<<<<<< HEAD
+=======
+
+  <footer id="footer">
+    <div class="content_container">
+      <div class="content">
+        <%= render "shared/footer" %>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </footer>
+  
+>>>>>>> 501011ed693f924ab4379b87c17b75cb16b2354f
 </body>
 </html>
