@@ -2,13 +2,24 @@
 <%= @challenge.description %>
 <div class="clear"></div>
 
+<% if @challenge.incomplete(current_user, current_user.user_specific_gameplan) %>
 <div id="complete_challenge_container">
-  <h2>When you're done...</h2>
-  Tell us a little about what you did:
-  <%= form_tag(submit_challenge_path) do %>
+<h2>When you're done...</h2>
+Tell us a little about what you did:
+<%= form_tag(submit_challenge_path) do %>
   <%= hidden_field_tag "challenge_id", @challenge.id %>
   <%= text_area_tag "writeup", "" %>
   <br/>
   <%= button_tag "Submit this challenge" %>
   <% end %>
+</div>
+<% elsif @challenge.pending(current_user, current_user.user_specific_gameplan) %>
+<div id="complete_challenge_container" class="pending">
+Thanks, your submission will be looked at by your mentor and they will get back to you soon.
+</div>
+<% elsif @challenge.complete(current_user, current_user.user_specific_gameplan) %>
+<div id="complete_challenge_container" class="complete">
+Congrats, you're all done!
+</div>
+<%end%>
 </div>

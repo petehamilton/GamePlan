@@ -9,20 +9,20 @@ jQuery(document).ready () ->
     jQuery.facebox( $(more_div).html())
     
   $('.approve').click ->
-      id = $(this).parent().attr("alt")
+      id = $(this).parent().parent().attr("alt")
       $.post '/take_challenge',
     		id: id,
     		(data) -> alert(data)
-    		$(this).parent().slideUp()
+    		$(this).parent().parent().slideUp()
   		  $("body").load("/choose_challenges") 
   		  
     		  
   $('.remove').click ->
-      id = $(this).parent().attr("alt")
+      id = $(this).parent().parent().attr("alt")
       $.post '/remove_challenge',
     		id: id,
     		(data) -> alert(data)
-    		$(this).parent().slideUp()
+    		$(this).parent().parent().slideUp()
   		  $("body").load("/choose_challenges") 
     		  
     		  
