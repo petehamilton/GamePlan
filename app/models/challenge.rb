@@ -15,7 +15,7 @@ class Challenge < ActiveRecord::Base
   end
   
   def complete(user, user_specific_gameplan)
-    completions = challenge_completions.select{|c| c.user_specific_gameplans.include? user.user_specific_gameplan}
+    completions = challenge_completions.select{|c| c.user_specific_gameplan == user.user_specific_gameplan}
     return completions.length > 0
   end
 end

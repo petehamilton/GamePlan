@@ -1,20 +1,14 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @challenge.summary %></h1>
+<%= @challenge.description %>
+<div class="clear"></div>
 
-<p>
-  <b>Summary:</b>
-  <%= @challenge.summary %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @challenge.description %>
-</p>
-
-<p>
-  <b>Level:</b>
-  <%= @challenge.level %>
-</p>
-
-
-<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
-<%= link_to 'Back', challenges_path %>
+<div id="complete_challenge_container">
+  <h2>When you're done...</h2>
+  Tell us a little about what you did:
+  <%= form_tag(submit_challenge_path) do %>
+  <%= hidden_field_tag "challenge_id", @challenge.id %>
+  <%= text_area_tag "writeup", "" %>
+  <br/>
+  <%= button_tag "Submit this challenge" %>
+  <% end %>
+</div>

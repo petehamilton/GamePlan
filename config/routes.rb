@@ -23,6 +23,7 @@ GamePlan::Application.routes.draw do
   
   match 'choose_challenges' => 'challenges#choose_challenges', :as => :choose_challenges
   match 'do_challenges' => 'challenges#do_challenges', :as => :do_challenges
+  match 'submit_challenge' => 'challenges#submit_challenge', :as => :submit_challenge
 
   match '/sign_out' => 'sessions#destroy', :controller => 'sessions'
   match '/sign_in' => 'sessions#new', :controller => 'sessions'
