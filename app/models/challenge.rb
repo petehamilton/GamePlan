@@ -8,4 +8,8 @@ class Challenge < ActiveRecord::Base
   def matches(skillable_obj)
     return skills - (skills - skillable_obj.skills)
   end
+  
+  def required(user)
+    user.user_specific_gameplan.gameplan.challenges.include? self
+  end
 end

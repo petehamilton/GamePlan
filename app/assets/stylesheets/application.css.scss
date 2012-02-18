@@ -1,18 +1,18 @@
 /*
- * This is a manifest file that'll automatically include all the stylesheets available in this directory
- * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
- * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require_self
- *= require_tree . 
+* This is a manifest file that'll automatically include all the stylesheets available in this directory
+* and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+* the top of the compiled file, but it's generally better to create a new file per style scope.
+*= require_self
+*= require_tree . 
 */
 
 @import 'flutie';
 @import 'bourbon';
 
 *{
-	/* Universal reset: */
-	margin:0;
-	padding:0;
+  /* Universal reset: */
+  margin:0;
+  padding:0;
 }
 
 html{
@@ -21,132 +21,107 @@ html{
 }
 
 body {
-	/* Setting the default text color, size, page background and a font stack: */
-	font-size:0.825em;
-	color:#555555;
-	font-family:Arial, Helvetica, sans-serif;
-  background: #cccccc;
-  background: -moz-linear-gradient(top, #eeeeee 0%, #dddddd 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#dddddd));
-  background: -webkit-linear-gradient(top, #eeeeee 0%,#dddddd 100%);
-  background: -o-linear-gradient(top, #eeeeee 0%,#dddddd 100%);
-  background: -ms-linear-gradient(top, #eeeeee 0%,#dddddd 100%);
-  background: linear-gradient(top, #eeeeee 0%,#dddddd 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#dddddd',GradientType=0 );
+  font-weight: 300;
+  color:#444;
+  font-family:Arial, Helvetica, sans-serif;
+  background: #f5f5f5;
 }
 
 /* Hyperlink Styles: */
-a, a:visited {
-	color:#0196e3;
-	text-decoration:none;
-	outline:none;
+a, a:visited, a:link {
+  color:#0196e3;
+  text-decoration:none;
+  outline:none;
 }
 
 a:hover {
-	text-decoration:underline;
+  text-decoration:underline;
 }
 
 /* Headings: */
 h1,h2,h3 {
-	font-family:"Myriad Pro","Helvetica Neue",Helvetica,Arial,Sans-Serif;
-	text-shadow:3px 2px 3px grey;
+  font-family:Helvetica,Arial,Sans-Serif;
 }
 
 h1 {
-	font-size:3.5em;
-	text-transform:uppercase;
+  font-size:3.5em;
+  text-transform:uppercase;
 }
 
 h2 {
-	font-size:2.2em;
-	font-weight:normal;
-	letter-spacing:0.01em;
-	text-transform:uppercase;
+  font-size:2.2em;
+  font-weight:normal;
+  letter-spacing:0.01em;
+  text-transform:uppercase;
 }
 
 p {
-	line-height:1.5em;
-	padding-bottom:0.5em;
+  line-height:1.5em;
+  padding-bottom:0.5em;
 }
 
+.clear{
+  clear: both;
+}
 
-div.wrap {
-  width: 880px;
+.content_container{
+  width: 850px;
   margin: 0 auto;
-	position:relative;
 }
 
-div.box {
-	/* Applying CSS3 rounded corners: */
-	@include border-radius(10px);
-	background-color:#f5f5f5;
-	margin:5px auto;
-	padding:5px 20px;
-  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3);
-  position: relative;
-	text-shadow:2px 2px 2px rgba(0,0,0,0.2);
-		overflow: hidden;
+header#header{
+  background: #059ccd url(image_path('header_bg.png')) repeat-x bottom left;
+  height: 150px;
+
+  #app_title{
+    font-family: 'Exo', sans-serif;
+    color: #fff;
+    font-size: 100px;
+    padding: 60px;
+    text-align: center;
+  }
 }
 
-div.box .line {
-	background-color:#dddddd;
-	border-bottom:1px solid #ffffff;
-	height:1px;
-	margin:1em 0;
-	overflow:hidden;
+nav#navigation{
+  background: #fff1d6 url(image_path('nav_bg.png')) repeat-x bottom left;
+  height:40px;
+  .content{
+    padding: 8px 15px 0px 15px;
+    a {
+      display:block;
+      float: left;
+      margin-right: 20px;
+    }
+    
+    .right_nav{
+      float:right;
+      a{
+        margin-right:0px;
+      }
+    }
+  }
 }
 
-div.nav {
-  
+#main{
+  .content_container{
+    background-color: #ffffff;
+    border: 2px solid #eee;
+    border-top: none;
+    
+    .content{
+      padding: 15px;
+    }
+  }
 }
 
-div.nav a {
-  float: left;
-  padding: 5px;
-  border-right: 1px solid black;
-}
-
-div.nav a:hover {
-  text-shadow:-1px -1px 0px #999999;
-}
-
-div.nav a:last-child {
-  border-right: none;
-}
-
-div.content {
-	position:relative;
-	clear: both;
-	padding: 20px 20px;
-}
-
-div.content #code span {
-  filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=2);  /* IE6,IE7 */
-  ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)"; /* IE8 */
-  -moz-transform: rotate(-180deg);  /* FF3.5+ */
-  -o-transform: rotate(-180deg);  /* Opera 10.5 */
-  -webkit-transform: rotate(-180deg);  /* Safari 3.1+, Chrome */
-  position: absolute;
-  
-  text-shadow:-1px -1px 0px #999999;
-}
-
-div.content #code {
-  position: absolute;
-  top: 10px;
-  left: 90%;
-  font-size: 100px;
-  line-height: 90px;
-  opacity: 0.1;
-  float: right;
-}
-
-div.copyright { 
-	padding-top: 15px;
-	clear: both;
-	color: #CCC;
-	text-align: center;
-	margin: 0 auto;
-	font-size: 10px;
-	height: 13px;
+footer#footer{
+  .content{
+    padding: 10px 15px;
+    
+    #copyright{
+      font-size: 12px;
+      text-align: center;
+      color: #666;
+    }
+  }
 }

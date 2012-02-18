@@ -1,3 +1,38 @@
 // Place all the styles related to the Challenges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#user_challenges_container{
+  ul{
+    list-style: none;
+  }
+}
+
+.challenges_container{
+  width: 380px;
+  
+  h1{
+    font-size: 20px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+}
+
+#user_challenges_container{
+  float:left;
+  margin-right: 60px;
+}
+
+#suggested_challenges_container{
+  float:left;
+}
+
+.challenge_row{
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  
+  &.compulsory{
+    
+  }
+}
