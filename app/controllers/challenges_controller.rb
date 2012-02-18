@@ -99,4 +99,15 @@ class ChallengesController < ApplicationController
     num_complete = @challenges.select{|c| c.complete(user, user.user_specific_gameplan)}.count
     @progress = (num_complete + 0.0) / @challenges.count
   end
+  
+  def take_challenge
+    @challenge = Challenge.find(params[:id])
+
+    current_user.user_specific_gameplan.challenges << @challenge
+
+    respond_to do |format|
+      format.html { redirect_to challenges_url }
+      format.json { head :ok }
+    end
+  end
 end

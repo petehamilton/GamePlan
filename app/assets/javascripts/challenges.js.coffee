@@ -7,3 +7,14 @@ jQuery(document).ready () ->
     more_div = $(this).parent().children(".more_description")[0]
     console.log $(more_div)
     jQuery.facebox( $(more_div).html())
+    
+  $('.approve').click ->
+      id = $(this).parent().attr("alt")
+      $.post '/take_challenge',
+    		id: id,
+        error: (jqXHR, textStatus, errorThrown) ->
+          alert("AJAX Error: #{textStatus}")
+    		
+    		(data) -> 
+    		  $('body').append "Successfully posted to the page."
+    		  alert(data)
