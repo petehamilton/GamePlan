@@ -53,7 +53,11 @@ h2{
   
   .summary, .controls{
     width: auto;
-    float:none;
+  }
+  
+  .controls{
+    float: right;
+    width: 90px;
   }
 
   .challenge_row{

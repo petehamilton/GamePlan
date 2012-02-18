@@ -7,8 +7,8 @@ challenge_row
 <%= "complete " if challenge.complete(current_user, current_user.user_specific_gameplan) %>
 <%= "pending " if challenge.pending(current_user, current_user.user_specific_gameplan) %>
 ">
-  <div class="summary"><%= challenge.summary %></div>
-  <div class="controls">
+  <div class="summary">
+  <%= challenge.summary %>
   <% if challenge.required(current_user) %>
     <span class="compulsory_label">(required)</span>
   <% end %>
