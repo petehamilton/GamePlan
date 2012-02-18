@@ -1,3 +1,20 @@
 // Place all the styles related to the Skills controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'bourbon';
+
+.skill_tags{
+  list-style:none;
+  
+  .skill_tag{
+    display:block;
+    float: left;
+    padding:2px 5px;
+    margin-right: 5px;
+    background-color: #b9eeff;
+    font-size: 10px;
+    
+    @include border-radius(2px)
+  }
+}
