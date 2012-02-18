@@ -38,8 +38,9 @@ class User < ActiveRecord::Base
       c[:matching_skills] = all_desired_skills - (all_desired_skills - c.skills)
     end
     
-    # Sort challenges based on matching
-    # raise cs.to_yaml
+    # sort descending
+    cs.sort! { |a,b| b[:matching_skills].length <=> a[:matching_skills].length }
+    
     if num > 0
       return cs[0..num]
     else

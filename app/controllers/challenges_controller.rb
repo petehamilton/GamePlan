@@ -88,6 +88,6 @@ class ChallengesController < ApplicationController
     user = current_user || User.first
     @required_challenges = user.required_challenges
     @chosen_challenges = user.chosen_challenges
-    @suggested_challenges = user.suggested_challenges
+    @suggested_challenges = user.suggested_challenges(5)
   end
 end
