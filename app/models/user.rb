@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_one :user_specific_gameplan
   has_one :gameplan, :through => :user_specific_gameplan
   
-  attr_accessible :first_name, :last_name, :email, :password, :rank
+  attr_accessible :first_name, :last_name, :email, :password, :rank, :phone_number
   
   validates_presence_of :rank
   

@@ -9,14 +9,25 @@
   margin-bottom: 30px;
 }
 
+#complete_challenge_container{
+  padding: 20px;
+  background-color: #effdd7;
+  border: 2px solid #DFF2BF;
+  margin-top:30px;
+}
+
+h1,h2{
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+h2{
+  font-size: 16px;
+}
+
 .challenges_container{
   width: 380px;
-
-  h1{
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-  }
 
   ul{
     list-style: none;
