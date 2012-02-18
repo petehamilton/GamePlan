@@ -27,6 +27,14 @@ body {
   background: #f5f5f5;
 }
 
+.float_right {
+  float: right;
+}
+
+.float_left {
+  float: left;
+}
+
 /* Hyperlink Styles: */
 a, a:visited, a:link {
   color:#0196e3;
@@ -197,7 +205,7 @@ nav#navigation{
     .right_nav{
       float:right;
       a{
-        margin-right:0px;
+        margin-right:5px;
       }
     }
   }

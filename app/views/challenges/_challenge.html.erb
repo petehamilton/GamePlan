@@ -3,7 +3,7 @@
   <% if challenge.required(current_user) %>
     <span class="compulsory_label">(required)</span>
   <% end %>
-  <a href="#" class="more_link">[info]</a>
+  <a href="#" class="circle info" alt="Info">i</a>
   
   <!-- if the challenge is not compulsory -->
     <!-- if already added -->
@@ -11,6 +11,10 @@
       <a href="#button" class="button icon approve">Add</a>
       <a href="#button" class="button danger icon remove">Remove</a>
     <% end %>
+    
+    <% if action_name == "do_challenges" %>
+      <a href="#button" class="button icon approve float_right">Mark Complete</a>
+    <% end %>  
   
   <!--<span class="circle add">+</span>
   <span class="circle remove">-</span>-->
