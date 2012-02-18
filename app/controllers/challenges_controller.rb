@@ -94,5 +94,9 @@ class ChallengesController < ApplicationController
   def do_challenges
     user = current_user || User.first
     @challenges = user.all_challenges
+    # raise @progress.inspect
+    # raise @challenges.map{|c| c}.inspect
+    num_complete = @challenges.select{|c| c.complete(user, user.user_specific_gameplan)}.count
+    @progress = (num_complete + 0.0) / @challenges.count
   end
 end
