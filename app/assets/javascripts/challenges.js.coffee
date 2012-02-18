@@ -12,20 +12,18 @@ jQuery(document).ready () ->
       id = $(this).parent().attr("alt")
       $.post '/take_challenge',
     		id: id,
-        error: (jqXHR, textStatus, errorThrown) ->
-          alert("AJAX Error: #{textStatus}")
-    		
-    		(data) -> 
-    		  $('body').append "Successfully posted to the page."
-    		  alert(data)
+    		(data) -> alert(data)
+    		$(this).parent().slideUp()
+  		  $("body").load("/choose_challenges") 
+  		  
     		  
   $('.remove').click ->
       id = $(this).parent().attr("alt")
       $.post '/remove_challenge',
     		id: id,
-        error: (jqXHR, textStatus, errorThrown) ->
-          alert("AJAX Error: #{textStatus}")
-    		
-    		(data) -> 
-    		  $('body').append "Successfully posted to the page."
-    		  alert(data)
+    		(data) -> alert(data)
+    		$(this).parent().slideUp()
+  		  $("body").load("/choose_challenges") 
+    		  
+    		  
+  
