@@ -7,13 +7,62 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 skills = []
-(1..10).each do |i|
-  skills << Skill.create(name: "Skill #{i}")
+["People skills"                                                   ,
+ "Communication and observation"                                   ,
+ "Ability to answer questions and offer advice"                    ,
+ "Team work"                                                       ,
+ "Ability to work under pressure"                                  ,
+ "Ability to deal with emotionally challenging situations"         ,
+ "Time management"                                                 ,
+ "Service orientation"                                             ,
+ "Customer service aswell as personal service"                     ,
+ "Reading comprehension"
+  ].each do |s|
+  skills << Skill.create(name: s)
 end
 
 challenges = []
-(1..20).each do |i|
-  c = Challenge.create(summary: "Challenge #{i}", description: "Challenge #{i} Description", level: i % 10)
+[{
+    summary: "Gain a G.C.S.E -C English or equivalent",
+    description: ""
+  },
+  {
+    summary: "Gain a G.C.S.E -C maths or equivalent",
+    description: ""
+  },
+  {
+    summary: "Apply for work experience in hospital/care home/ hospice",
+    description: ""
+  },
+  {
+    summary: "Apply for a college course level 1, 2 or 3",
+    description: ""
+  },
+  {
+    summary: "Apply for apprenticeship (NHS Cadets)",
+    description: ""
+  },
+  {
+    summary: "Apply for voluntary role",
+    description: ""
+  },
+  {
+    summary: "Research different nursing types",
+    description: ""
+  },
+  {
+    summary: "Look at university's offering nursing degrees",
+    description: ""
+  },
+  {
+    summary: "Pick a degree",
+    description: ""
+  },
+  {
+    summary: "Apply for a degree place",
+    description: ""
+  }].each do |ch|
+  c = Challenge.create(summary: ch[:summary], description: ch[:description], level: rand(10))
   (1..rand(5)).each do
     c.skills << skills[rand(skills.length)]
   end
@@ -30,7 +79,7 @@ bigorg = Organisation.create(name: 'A Nice Friendly Org.')
 end
 
 bigorg.gameplans.each do |g|
-  (0..10).each do |i|
+  (0..3).each do |i|
     c = challenges[rand(challenges.length)]
     g.challenges << challenges[rand(challenges.length)] if !g.challenges.include?(c)
   end
