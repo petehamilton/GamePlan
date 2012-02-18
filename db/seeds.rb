@@ -56,9 +56,9 @@ users.each do |u|
   ugp = UserSpecificGameplan.create!(user_id: u.id, gameplan_id: bigorg.gameplans[rand(bigorg.gameplans.length)].id)
 end
 
-users.each do |u|
-  (0..20).each do |i|
-    c = challenges[rand(challenges.length)]
-    u.user_specific_gameplan.challenges << c unless u.user_specific_gameplan.gameplan.challenges.include?(c)
-  end
-end
+# users.each do |u|
+#   (0..rand(3) + 2).each do |i|
+#     c = challenges[rand(challenges.length)]
+#     u.user_specific_gameplan.challenges << c unless (u.user_specific_gameplan.challenges + u.gameplan.challenges).include?(c)
+#   end
+# end
