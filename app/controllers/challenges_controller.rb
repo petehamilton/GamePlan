@@ -1,4 +1,6 @@
 class ChallengesController < ApplicationController
+  before_filter :authorize
+  
   # GET /challenges
   # GET /challenges.json
   def index
