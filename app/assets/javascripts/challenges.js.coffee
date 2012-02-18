@@ -18,3 +18,14 @@ jQuery(document).ready () ->
     		(data) -> 
     		  $('body').append "Successfully posted to the page."
     		  alert(data)
+    		  
+  $('.remove').click ->
+      id = $(this).parent().attr("alt")
+      $.post '/remove_challenge',
+    		id: id,
+        error: (jqXHR, textStatus, errorThrown) ->
+          alert("AJAX Error: #{textStatus}")
+    		
+    		(data) -> 
+    		  $('body').append "Successfully posted to the page."
+    		  alert(data)

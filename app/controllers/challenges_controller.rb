@@ -117,4 +117,16 @@ class ChallengesController < ApplicationController
     challenge_completion = ChallengeCompletion.create(:writeup => writeup, :challenge_id => params[:challenge_id], :user_id => current_user.id, :user_specific_gameplan_id => current_user.user_specific_gameplan.id)
     redirect_to do_challenges_path
   end
+
+  def remove_challenge
+    @challenge = Challenge.find(params[:id])
+
+    current_user.user_specific_gameplan.challenges.delete(@challenge)
+
+    respond_to do |format|
+      format.html { redirect_to challenges_url }
+      format.json { head :ok }
+    end
+  end  
+  
 end

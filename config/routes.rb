@@ -27,6 +27,11 @@ GamePlan::Application.routes.draw do
 
   match '/sign_out' => 'sessions#destroy', :controller => 'sessions'
   match '/sign_in' => 'sessions#new', :controller => 'sessions'
+  
+  match '/take_challenge' => 'challenges#take_challenge', :as => :take_challenge
+  
+  
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
