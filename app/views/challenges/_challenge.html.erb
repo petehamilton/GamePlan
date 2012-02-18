@@ -8,11 +8,13 @@
   <!-- if the challenge is not compulsory -->
     <!-- if already added -->
     <% if !challenge.required(current_user) %>
+      <% if action_name != "do_challenges" %>
       <% if !current_user.user_specific_gameplan.challenges.include?(challenge) %>
         <a href="#button" class="button icon approve float_right">Add</a>
       <% else %>
 
       <a href="#button" class="button danger icon remove float_right">Remove</a>
+       <% end %>
        <% end %>
     <% end %>
     
