@@ -12,29 +12,8 @@ challenge_row
   <% if challenge.required(current_user) %>
     <span class="compulsory_label">(required)</span>
   <% end %>
-  <a href="#" class="circle info" alt="Info">i</a>
-  
-  <!-- if the challenge is not compulsory -->
-    <!-- if already added -->
-    <% if !challenge.required(current_user) %>
-      <% if action_name != "do_challenges" %>
-      <% if !current_user.user_specific_gameplan.challenges.include?(challenge) %>
-        <a href="#button" class="button icon approve float_right">Add</a>
-      <% else %>
-
-      <a href="#button" class="button danger icon remove float_right">Remove</a>
-       <% end %>
-       <% end %>
-    <% end %>
-    
-    <% if action_name == "do_challenges" %>
-      <%= link_to "View", challenge, :class => "button icon arrowright float_right"%>
-    <% end %>
-  
-  <!--<span class="circle add">+</span>
-  <span class="circle remove">-</span>-->
-  </div>
-  <div class="more_description">
+    <a href="#" class="circle info more_link" alt="Info">i</a>
+    <div class="more_description">
     <div class="title"><%= challenge.summary %></div>
     <div class="description"><%= challenge.description %></div>
     <ul class="skill_tags">
@@ -43,5 +22,26 @@ challenge_row
       <% end %>
     </ul>
   </div>
+  <!-- if the challenge is not compulsory -->
+    <!-- if already added -->
+    <% if !challenge.required(current_user) %>
+      <% if action_name != "do_challenges" %>
+        <% if !current_user.user_specific_gameplan.challenges.include?(challenge) %>
+          <a href="#button" class="button icon approve float_right">Add</a>
+        <% else %>
+  
+        <a href="#button" class="button danger icon remove float_right">Remove</a>
+         <% end %>
+       <% end %>
+    <% end %>
+    
+    <% if action_name == "do_challenges" %>
+      <%= link_to "View", challenge, :class => "button icon arrowright float_right" %> 
+    <% end %>
+  
+  <!--<span class="circle add">+</span>
+  <span class="circle remove">-</span>-->
+  </div>
+
   <div class="clear"></div>
 </li>
